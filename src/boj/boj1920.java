@@ -10,12 +10,14 @@ public class boj1920 {
         int[] numsN = new int[n];
         for (int i = 0; i < n; i++) {
             int k = sc.nextInt();
+            numsN[i] = k;
         }
 
         int m = sc.nextInt();
         int[] numsM = new int[m];
         for (int i = 0; i < m; i++) {
             int k = sc.nextInt();
+            numsM[i] = k;
         }
 
         // M 돌면서
