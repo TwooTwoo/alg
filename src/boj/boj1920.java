@@ -1,32 +1,44 @@
 package boj;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 public class boj1920 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = sc.nextInt();
-        int[] numsN = new int[n];
-        for (int i = 0; i < n; i++) {
-            int k = sc.nextInt();
-            numsN[i] = k;
+        // readLine() 메서드는 엔터 포함 한 줄 전체를 String으로 읽어들인다
+        int n = Integer.parseInt(br.readLine());
+//        int[] numsN = new int[n];
+        Set<Integer> setN = new HashSet<>();
+        StringTokenizer stN = new StringTokenizer(br.readLine(), " ");
+        while (stN.hasMoreTokens()) {
+            String tokenN = stN.nextToken();
+            setN.add(Integer.parseInt(tokenN));
         }
 
         int m = sc.nextInt();
-        int[] numsM = new int[m];
-        for (int i = 0; i < m; i++) {
-            int k = sc.nextInt();
-            numsM[i] = k;
+        Set<Integer> setM = new HashSet<>();
+        StringTokenizer stM = new StringTokenizer(br.readLine(), " ");
+        while (stM.hasMoreTokens()) {
+            String tokenM = stM.nextToken();
+            setM.add(Integer.parseInt(tokenM));
         }
+        int[] numsM = setM.stream().mapToInt(Integer::intValue).toArray();
 
-        // M 돌면서
-        for (int i = 0; i < m; i++) { {
+
+        // M번 반복
+        for (int i = 0; i < m; i++) {
+            {
                 boolean found = false;
-                // numsM의 각 원소를 numsN의 각 원소와 비교
                 for (int j = 0; j < n; j++) {
-                    // numsM의 원소가 numsN에 존재하면 found=ture 후 break;
-                    if (numsM[i] == numsN[j]) {
+                    if (setN.contains(numsM[i])) {
                         found = true;
                         break;
                     }
@@ -36,8 +48,7 @@ public class boj1920 {
                 } else {
                     System.out.println(0);
                 }
-        }
-
+            }
         }
     }
 }
