@@ -14,6 +14,7 @@ public class boj1920 {
         // readLine() 메서드는 엔터 포함 한 줄 전체를 String으로 읽어들인다
         int n = Integer.parseInt(br.readLine());
         Set<Integer> setN = new HashSet<>();
+
         StringTokenizer stN = new StringTokenizer(br.readLine(), " ");
         while (stN.hasMoreTokens()) {
             String tokenN = stN.nextToken();
@@ -27,6 +28,7 @@ public class boj1920 {
         for (int i = 0; i < m; i++) {
             numsM[i] = Integer.parseInt(stM.nextToken());
         }
+
         for (int j = 0; j < m; j++) {
             if (setN.contains(numsM[j])) {
                 System.out.println(1);
