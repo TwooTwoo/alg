@@ -24,15 +24,20 @@ public class boj1920 {
 
 //        int m = sc.nextInt();
         int m = Integer.parseInt(br.readLine());
-        Set<Integer> setM = new HashSet<>();
+        int[] numsM = new int[m];
+
+//        Set<Integer> setM = new HashSet<>();
         StringTokenizer stM = new StringTokenizer(br.readLine(), " ");
-        while (stM.hasMoreTokens()) {
-            String tokenM = stM.nextToken();
-            setM.add(Integer.parseInt(tokenM));
+        for(int i = 0; i < m; i++) {
+            numsM[i] = Integer.parseInt(stM.nextToken());
         }
-        int[] numsM = setM.stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
+//        while (stM.hasMoreTokens()) {
+//            String tokenM = stM.nextToken();
+//            setM.add(Integer.parseInt(tokenM));
+//        }
+//        int[] numsM = setM.stream()
+//                .mapToInt(Integer::intValue)
+//                .toArray();
 
 
         // M번 반복
